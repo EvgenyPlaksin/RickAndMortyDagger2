@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.lnight.rickandmorty.common.Resource
@@ -16,6 +15,7 @@ import com.lnight.rickandmorty.common.appComponent
 import com.lnight.rickandmorty.common.collectLifecycleFlow
 import com.lnight.rickandmorty.databinding.FragmentCharactersListBinding
 import com.lnight.rickandmorty.presentation.list_screen.CharactersListViewModel
+import com.lnight.rickandmorty.presentation.list_screen.CharactersListViewModelProvider
 import javax.inject.Inject
 
 class CharactersListFragment : Fragment() {
@@ -28,7 +28,7 @@ class CharactersListFragment : Fragment() {
     }
 
     @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    lateinit var viewModelFactory: CharactersListViewModelProvider
 
     override fun onAttach(context: Context) {
         context.appComponent.inject(this)

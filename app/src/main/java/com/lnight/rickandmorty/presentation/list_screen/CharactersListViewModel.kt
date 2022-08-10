@@ -31,14 +31,4 @@ class CharactersListViewModel(
         }
     }
 
-    @Suppress("UNCHECKED_CAST")
-    class Factory @Inject constructor(
-        private val charactersListUseCase: CharactersListUseCase
-    ) : ViewModelProvider.Factory {
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            require(modelClass == CharactersListViewModel::class)
-            return CharactersListViewModel(charactersListUseCase) as T
-        }
-    }
-
 }
